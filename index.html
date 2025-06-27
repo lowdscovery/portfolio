@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,68 +6,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Designer Graphique</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/forms"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <header class="bg-white shadow p-6 sticky top-0 z-50">
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-      <div class="flex items-center space-x-4">
-        <img src="photo.jpg" alt="Ma photo" class="w-16 h-16 rounded-full object-cover border-2 border-blue-600" />
-        <div>
-          <h1 class="text-3xl font-bold">RAHERINIAINA Georges Aimé Stephan</h1>
-          <p class="text-gray-600">Designer Graphique | Mahajanga, Madagascar</p>
-        </div>
-      </div>
-      <nav class="mt-4 md:mt-0 space-x-4">
-        <a href="#projets" class="text-blue-600 hover:underline">Projets</a>
-        <a href="#cv" class="text-blue-600 hover:underline">CV</a>
-        <a href="#contact" class="text-blue-600 hover:underline">Contact</a>
-      </nav>
-    </div>
-  </header>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-  <section class="container mx-auto py-10" x-data="{ show: false }" x-intersect.once="show = true">
-    <h2 class="text-2xl font-semibold mb-4 transition-all duration-700" x-bind:class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">À propos de moi</h2>
-    <p class="text-gray-700 max-w-2xl transition-opacity duration-1000 delay-300" x-bind:class="show ? 'opacity-100' : 'opacity-0'">
-      Passionné par la création visuelle, je conçois des identités graphiques, des supports imprimés et numériques modernes. Mon objectif est de transmettre des messages clairs et percutants à travers le design.
+  <!-- Hero Section with Gradient -->
+  <section class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white py-20 text-center">
+    <div class="max-w-2xl mx-auto px-4">
+      <img src="photo.jpg" alt="Ma photo" class="w-24 h-24 mx-auto rounded-full border-4 border-white shadow-lg mb-4 object-cover">
+      <h1 class="text-3xl font-bold">RAHERINIAINA Georges Aimé Stephan</h1>
+      <p class="text-md mt-2">Designer Graphique | Mahajanga, Madagascar</p>
+      <div class="mt-4 space-x-3">
+        <a href="#projets" class="bg-white text-indigo-600 px-5 py-2 rounded-full shadow hover:bg-gray-100">Voir mes projets</a>
+        <a href="#contact" class="bg-white text-indigo-600 px-5 py-2 rounded-full shadow hover:bg-gray-100">Me contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- À propos -->
+  <section class="max-w-4xl mx-auto px-4 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">À propos de moi</h2>
+    <p class="text-gray-600 text-lg leading-relaxed">
+      Je suis passionné par la création graphique et l'identité visuelle. Mon objectif est de transformer vos idées en visuels puissants et professionnels.
     </p>
   </section>
 
-  <section id="projets" class="container mx-auto py-10" x-data="{ show: false }" x-intersect.once="show = true">
-    <h2 class="text-2xl font-semibold mb-6 transition-all duration-700" x-bind:class="show ? 'opacity-100 scale-100' : 'opacity-0 scale-90'">Mes Projets</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <template x-for="(projet, index) in [
-        { titre: 'Identité Visuelle – Nature Bio', description: 'Logo, palette et charte graphique pour une boutique bio.', image: 'https://via.placeholder.com/300x200' },
-        { titre: 'Flyer – Festival de Musique', description: 'Création d’un flyer coloré et festif.', image: 'https://via.placeholder.com/300x200' },
-        { titre: 'UI Design – EauPro JIRAMA', description: 'Maquette de l’interface utilisateur de l’application EauPro.', image: 'https://via.placeholder.com/300x200' }
-      ]" :key="index">
-        <div class="bg-white shadow rounded-lg p-4 transform transition duration-500 hover:scale-105">
-          <img :src="projet.image" :alt="projet.titre" class="rounded mb-3">
-          <h3 class="text-xl font-bold" x-text="projet.titre"></h3>
-          <p class="text-sm text-gray-600" x-text="projet.description"></p>
+  <!-- Projets -->
+  <section id="projets" class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center mb-10">Mes Projets</h2>
+    <div class="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-white rounded-lg shadow hover:shadow-xl transition transform hover:-translate-y-1">
+        <img src="et.jpg" class="w-full h-48 object-cover rounded-t-lg" alt="">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2">Identité Visuelle – Nature Bio</h3>
+          <p class="text-sm text-gray-600">Logo, palette et charte graphique pour une boutique bio.</p>
         </div>
-      </template>
+      </div>
+      <div class="bg-white rounded-lg shadow hover:shadow-xl transition transform hover:-translate-y-1">
+        <img src="de.jpg" class="w-full h-48 object-cover rounded-t-lg" alt="">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2">Flyer – Festival de Musique</h3>
+          <p class="text-sm text-gray-600">Création d’un flyer coloré et festif.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow hover:shadow-xl transition transform hover:-translate-y-1">
+        <img src="photo.jpg" class="w-full h-48 object-cover rounded-t-lg" alt="">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2">UI Design – EauPro JIRAMA</h3>
+          <p class="text-sm text-gray-600">Maquette de l’interface utilisateur de l’application EauPro.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="cv" class="container mx-auto py-10 text-center" x-data="{ show: false }" x-intersect.once="show = true">
-    <h2 class="text-2xl font-semibold mb-6 transition-opacity duration-700" x-bind:class="show ? 'opacity-100' : 'opacity-0'">Télécharger mon CV</h2>
-    <a href="cv-georges-stephan.pdf" download class="inline-block bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700 transform hover:scale-105 transition">
+  <!-- CV Download -->
+  <section id="cv" class="bg-indigo-50 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">Télécharger mon CV</h2>
+    <a href="cv.pdf" download class="bg-indigo-600 text-white px-6 py-3 rounded-full shadow hover:bg-indigo-700 transition">
       📄 Télécharger le CV
     </a>
   </section>
 
-  <section id="contact" class="container mx-auto py-10" x-data="{ show: false }" x-intersect.once="show = true">
-    <h2 class="text-2xl font-semibold mb-4 transition-all duration-700" x-bind:class="show ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'">Contact</h2>
-    <p>Email : <a href="mailto:georges.stephan@email.com" class="text-blue-600">georges.stephan@email.com</a></p>
-    <p>Téléphone : +261 XX XXX XX XX</p>
+  <!-- Contact -->
+  <section id="contact" class="max-w-4xl mx-auto px-4 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">Contact</h2>
+    <p class="text-lg text-gray-600">Email : <a href="mailto:stephangeorges980@gmail.com" class="text-indigo-600 underline">stephangeorges980@gmail.com</a></p>
+    <p class="text-lg text-gray-600 mt-2">Téléphone : +261 32 69 121 32 / 34 38 673 69</p>
   </section>
 
-  <footer class="bg-white shadow p-6 mt-10">
-    <div class="container mx-auto text-center text-sm text-gray-500">
+  <!-- Footer -->
+  <footer class="bg-white border-t py-6">
+    <div class="text-center text-sm text-gray-500">
       &copy; 2025 Georges Aimé Stephan. Tous droits réservés.
     </div>
   </footer>
+
 </body>
 </html>
